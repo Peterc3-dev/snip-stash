@@ -17,8 +17,8 @@ use ratatui::widgets::{Block, Borders, Cell, Paragraph, Row, Table, Wrap};
 use ratatui::Terminal;
 use snippet::Snippet;
 
-const GREEN: Color = Color::Rgb(0, 255, 0);
-const DIM_GREEN: Color = Color::Rgb(0, 100, 0);
+const GREEN: Color = Color::Rgb(0, 255, 200);
+const DIM_GREEN: Color = Color::Rgb(0, 128, 100);
 
 #[derive(PartialEq)]
 enum Mode {
