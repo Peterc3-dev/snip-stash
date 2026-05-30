@@ -47,7 +47,8 @@ fn main() {
         Ok(cfg) => println!("{cfg}"),
         Err(e) => eprintln!("Failed: {e}"),
     }
-}"#.into(),
+}"#
+            .into(),
         ),
         Snippet::new(
             "Rust Iterator Chaining".into(),
@@ -62,7 +63,8 @@ let result: Vec<String> = names
     .collect();
 
 // result: ["ALICE", "CHARLIE", "DIANA"]
-println!("{result:?}");"#.into(),
+println!("{result:?}");"#
+                .into(),
         ),
         Snippet::new(
             "Rust Async Spawn".into(),
@@ -80,7 +82,8 @@ async fn main() {
 
     let result = handle.await.unwrap();
     println!("Got: {result}");
-}"#.into(),
+}"#
+            .into(),
         ),
         Snippet::new(
             "Rust Enum + Match".into(),
@@ -98,7 +101,8 @@ fn handle(cmd: Command) {
         Command::Echo(msg) => println!("{msg}"),
         Command::Move { x, y } => println!("Move to ({x}, {y})"),
     }
-}"#.into(),
+}"#
+            .into(),
         ),
         Snippet::new(
             "Rust Trait Implementation".into(),
@@ -116,8 +120,9 @@ impl Greet for User {
     }
 }
 
-let u = User { name: "raz".into() };
-println!("{}", u.hello());"#.into(),
+let u = User { name: "world".into() };
+println!("{}", u.hello());"#
+                .into(),
         ),
         Snippet::new(
             "Find Files by Pattern".into(),
@@ -131,7 +136,8 @@ find /var/log -size +10M -type f
 
 # Find and delete .tmp files (dry run first)
 find . -name '*.tmp' -type f -print
-# find . -name '*.tmp' -type f -delete"#.into(),
+# find . -name '*.tmp' -type f -delete"#
+                .into(),
         ),
         Snippet::new(
             "Grep Patterns".into(),
@@ -147,7 +153,8 @@ grep -rc 'fn ' --include='*.rs' . | grep -v ':0$'
 grep -B2 -A2 'panic!' src/
 
 # Extract emails from a file
-grep -oE '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}' file.txt"#.into(),
+grep -oE '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}' file.txt"#
+                .into(),
         ),
         Snippet::new(
             "Awk Column Processing".into(),
@@ -163,7 +170,8 @@ awk '{sum += $3} END {print sum}' data.txt
 awk '$1 > 100 {print $0}' data.txt
 
 # Custom delimiter (CSV)
-awk -F',' '{print $1, $3}' data.csv"#.into(),
+awk -F',' '{print $1, $3}' data.csv"#
+                .into(),
         ),
         Snippet::new(
             "Git Rebase & Fixup".into(),
@@ -181,7 +189,8 @@ git fetch origin
 git rebase origin/main
 
 # Abort if it goes wrong
-git rebase --abort"#.into(),
+git rebase --abort"#
+                .into(),
         ),
         Snippet::new(
             "Git Stash Workflows".into(),
@@ -203,7 +212,8 @@ git stash pop
 git stash apply stash@{2}
 
 # Stash only unstaged changes
-git stash push --keep-index"#.into(),
+git stash push --keep-index"#
+                .into(),
         ),
         Snippet::new(
             "Systemd Service Template".into(),
@@ -215,15 +225,16 @@ After=network.target
 
 [Service]
 Type=simple
-User=raz
-WorkingDirectory=/home/raz/project
+User=myuser
+WorkingDirectory=/opt/myproject
 ExecStart=/usr/bin/my-binary --flag
 Restart=on-failure
 RestartSec=5
 Environment=RUST_LOG=info
 
 [Install]
-WantedBy=multi-user.target"#.into(),
+WantedBy=multi-user.target"#
+                .into(),
         ),
         Snippet::new(
             "Python List Comprehension Patterns".into(),
@@ -239,7 +250,8 @@ freq = {ch: s.count(ch) for ch in set(s)}
 evens_sq = [x**2 for x in range(20) if x % 2 == 0]
 
 # Walrus operator in comprehension (3.8+)
-results = [y for x in data if (y := process(x)) is not None]"#.into(),
+results = [y for x in data if (y := process(x)) is not None]"#
+                .into(),
         ),
         Snippet::new(
             "Disk & Memory Quick Checks".into(),
@@ -259,7 +271,8 @@ df -hT | grep -v tmpfs
 
 # GPU VRAM (AMD)
 cat /sys/class/drm/card*/device/mem_info_vram_used
-cat /sys/class/drm/card*/device/mem_info_vram_total"#.into(),
+cat /sys/class/drm/card*/device/mem_info_vram_total"#
+                .into(),
         ),
         Snippet::new(
             "Tar & Compression".into(),
@@ -278,7 +291,8 @@ tar tzf archive.tar.gz
 tar --zstd -cf archive.tar.zst dir/
 
 # Extract specific file
-tar xzf archive.tar.gz path/to/file.txt"#.into(),
+tar xzf archive.tar.gz path/to/file.txt"#
+                .into(),
         ),
         Snippet::new(
             "Rust Struct Update Syntax".into(),
@@ -308,7 +322,8 @@ let cfg = Config {
     port: 9090,
     verbose: true,
     ..Config::default()
-};"#.into(),
+};"#
+            .into(),
         ),
     ]
 }
